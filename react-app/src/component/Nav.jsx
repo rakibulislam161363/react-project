@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -8,50 +7,40 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
-
+import Img from '../component/Logo.png';
 
 const pages = ['About Us', 'Pricing', 'Customers', 'Solutions'];
 
-
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
   };
- 
+  // const handleOpenUserMenu = event => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
- 
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
     <AppBar position="static" sx={{ backgroundColor: 'black' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          ></Typography>
-            
+          <img
+            src={Img}
+            className="hidden ml-10 md:flex mr-34 lg:flex xl:flex"
+            alt=""
+          />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -86,25 +75,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(page => (
               <Button
@@ -116,35 +87,25 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Button
-                  sx={{
-                    my: 2,
-                    color: 'white',
-                    display: 'block',
-                    backgroundColor: '#0FF1F6',
-                    borderRadius: '20px',
-                  }}
-                >
-                  Book a Demo
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    my: 2,
-                    color: 'white',
-                    display: 'block',
-                    borderRadius: '20px',
-                    outline:"5px"
-                  }}
-                >
-                  Contact Us
-                </Button>
-              </IconButton>
-            </Tooltip>
-          </Box>
+          <div className='hidden md:flex flex-row'>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#0FF1F6',
+                marginRight: '5px',
+                color: 'black',
+              }}
+            >
+              Book a Demo
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ color: 'white', marginLeft: '5px' }}
+            >
+              Contact Us
+            </Button>
+          </div>
+          <img src={Img} className='md:hidden flex mr-5' alt="" />
         </Toolbar>
       </Container>
     </AppBar>
