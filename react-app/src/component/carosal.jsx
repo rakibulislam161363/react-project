@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Carousel = ({ children, autoSlide = true, autoSlideInterval = 3000 }) => {
+const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timerRef = useRef(null);
 

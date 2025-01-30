@@ -7,7 +7,7 @@ import Train from './component/train';
 import Allo from './component/allo';
 import Last from './component/last';
 import Carousel from './component/carosal';
-
+import Imge from "./component/reacticon.png";
 function App() {
 
 
@@ -23,6 +23,7 @@ function App() {
       <Carousel>
         <div className="bg-black text-white h-64 flex items-center justify-center">
           <div className="text-center">
+            <img src={Imge} className='text-center flex justify-center mx-auto pb-2' alt="" />
             <p className="w-[500px]">
               Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum, ac aliquet odio mattis.
