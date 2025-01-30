@@ -9,7 +9,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirName, 'index.html'),
+        main: resolve(__dirname, 'public/index.html'), // If in the 'public' folder
+        // OR
+        // main: resolve(__dirname, 'src/index.html'),
       },
     },
   },
