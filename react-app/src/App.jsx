@@ -6,6 +6,7 @@ import Control from './component/contorl';
 import Train from './component/train';
 import Allo from './component/allo';
 import Last from './component/last';
+import Carousel from './component/carosal';
 function App() {
 
 
@@ -18,6 +19,7 @@ function App() {
       <Control />
       <Train />
       <Allo />
+      <Carousel />
       <Last />
     </>
   );
