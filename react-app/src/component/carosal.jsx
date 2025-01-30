@@ -52,7 +52,7 @@ const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000 }) => 
           </div>
         ))}
       </div>
-      {/* Navigation Buttons */}
+      Navigation Buttons
       <div className="absolute bottom-24  md:left-[500px] -translate-x-1/2 flex md:space-x-[790px] left-[245px] space-x-[300px]">
         <button
           onClick={prevSlide}
