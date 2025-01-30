@@ -19,11 +19,11 @@ const Carousel = ({ children, autoSlide = true, autoSlideInterval = 3000 }) => {
   const startAutoSlide = () => {
     clearInterval(timerRef.current); // Clear any existing timer
     timerRef.current = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % slides.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, autoSlideInterval);
   };
 
-  const goToSlide = index => {
+  const goToSlide = (index) => {
     setCurrentIndex(index);
     clearInterval(timerRef.current); // Stop auto-sliding when manually navigating
   };
@@ -37,9 +37,7 @@ const Carousel = ({ children, autoSlide = true, autoSlideInterval = 3000 }) => {
   };
 
   return (
-    <div className="relative h-64 w-full overflow-hidden">
-      {' '}
-      {/* Adjust height as needed */}
+    <div className="relative h-64 w-full overflow-hidden"> {/* Adjust height as needed */}
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -50,21 +48,17 @@ const Carousel = ({ children, autoSlide = true, autoSlideInterval = 3000 }) => {
           </div>
         ))}
       </div>
+
       {/* Navigation Buttons */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-        <button
-          onClick={prevSlide}
-          className="p-2 bg-gray-800 text-white rounded"
-        >
+      <div className="absolute bottom-4 left-13 justify-between mx-auto -translate-x-1/2 flex space-x-2">
+        <button onClick={prevSlide} className="p-2 bg-gray-800 text-white rounded">
           Prev
         </button>
-        <button
-          onClick={nextSlide}
-          className="p-2 bg-gray-800 text-white rounded"
-        >
+        <button onClick={nextSlide} className="p-2 bg-gray-800 text-white rounded">
           Next
         </button>
       </div>
+
       {/* Indicators (optional) */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
