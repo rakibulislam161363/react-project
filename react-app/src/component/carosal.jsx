@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,7 +39,9 @@ const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000 }) => 
   };
 
   return (
-    <div className="relative h-64 w-full overflow-hidden"> {/* Adjust height as needed */}
+    <div className="relative h-64 w-full overflow-hidden">
+      {' '}
+      {/* Adjust height as needed */}
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -48,17 +52,21 @@ const Carousel = ({ children, autoSlide = false, autoSlideInterval = 3000 }) => 
           </div>
         ))}
       </div>
-
       {/* Navigation Buttons */}
-      <div className="absolute bottom-4 left-13 justify-between mx-auto -translate-x-1/2 flex space-x-2">
-        <button onClick={prevSlide} className="p-2 bg-gray-800 text-white rounded">
-          Prev
+      <div className="absolute bottom-24  md:left-[500px] -translate-x-1/2 flex md:space-x-[790px] left-[245px] space-x-[300px]">
+        <button
+          onClick={prevSlide}
+          className="p-2 bg-gray-800 text-white rounded"
+        >
+          <ArrowBackIosIcon></ArrowBackIosIcon>
         </button>
-        <button onClick={nextSlide} className="p-2 bg-gray-800 text-white rounded">
-          Next
+        <button
+          onClick={nextSlide}
+          className="p-2 bg-gray-800 text-white rounded"
+        >
+          <ArrowForwardIosIcon></ArrowForwardIosIcon>
         </button>
       </div>
-
       {/* Indicators (optional) */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
