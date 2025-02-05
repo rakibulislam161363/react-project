@@ -5,7 +5,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 function Hero() {
   return (
     <>
-      <div className="bg-[url('./component/img.png')] w-full h-auto px-15 py-20 text-center md:text-left">
+      <div className="bg-[url('./component/img.png')] w-full h-auto px-15 py-20 text-center md:text-left bg-black">
         <h3 className="text-[#0FF1F6] text-2xl text-center md:text-left">
           AI SDRs (aiDRs)
         </h3>
